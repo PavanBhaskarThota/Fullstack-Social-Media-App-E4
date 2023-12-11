@@ -17,10 +17,10 @@ postRouter.post("/add", async (req, res) => {
 });
 
 postRouter.get("/", async (req, res) => {
-  const { userid } = req.body;
-  const {device} = req.query
+  const { userId } = req.body;
+  const { device } = req.query;
   try {
-    const post = await PostModel.find({ userid });
+    const post = await PostModel.find({ userId });
     res.status(200).send({ posts: post });
   } catch (error) {
     res.status(400).send({ err: error });
